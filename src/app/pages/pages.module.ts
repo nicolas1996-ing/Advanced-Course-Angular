@@ -20,6 +20,7 @@ import { AppRoutingModule } from '../app-routing.module';
     Grafica1Component,
     PagesComponent,
   ],
-  imports: [CommonModule, SharedModule, AppRoutingModule],
+  imports: [CommonModule, SharedModule,AppRoutingModule],
+  // El AppRoutingModule permite hacer uso del router-outlet 
 })
 export class PagesModule {}

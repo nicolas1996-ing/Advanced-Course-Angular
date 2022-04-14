@@ -8,5 +8,6 @@ import { AppRoutingModule } from '../app-routing.module';
   declarations: [LoginComponent, RegisterComponent],
   exports: [LoginComponent, RegisterComponent],
   imports: [CommonModule, AppRoutingModule],
+  // El AppRoutingModule permite hacer uso del router-outlet 
 })
 export class AuthModule {}

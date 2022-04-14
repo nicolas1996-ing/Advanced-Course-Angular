@@ -1,45 +1,19 @@
+// modules
 import { NgModule } from '@angular/core';
+import { PagesRoutingModule } from './pages/pages.routing';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './auth/login/login.component';
-import { RegisterComponent } from './auth/register/register.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { Grafica1Component } from './pages/grafica1/grafica1.component';
-import { NoPagesFoundComponent } from './pages/no-pages-found/no-pages-found.component';
-import { PagesComponent } from './pages/pages.component';
-import { ProgressComponent } from './pages/progress/progress.component';
+
+// components
+import { NoPagesFoundComponent } from './no-pages-found/no-pages-found.component';
+import { AuthRoutingModule } from './auth/auth.routing';
 
 const routes: Routes = [
+  // path: ''  => PagesRotingModule
+  // path '/login' && '/register' => AuthRoutingModule
   {
-    // PagesComponent tiene un router-outlet
     path: '',
-    component: PagesComponent,
-    children: [
-      {
-        path: 'dashboard',
-        component: DashboardComponent,
-      },
-      {
-        path: 'progress',
-        component: ProgressComponent,
-      },
-      {
-        path: 'grafica',
-        component: Grafica1Component,
-      },
-      {
-        path: '',
-        redirectTo: '/dashboard',
-        pathMatch: 'full', // redirección automatica
-      },
-    ],
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
+    redirectTo: '/dashboard', // localhost:4200/ => localhost:4200/dashboard
+    pathMatch: 'full',
   },
   {
     path: '**',
@@ -49,7 +23,11 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [],
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes),
+    PagesRoutingModule, // importar el sistema de rutas de los demás modulos
+    AuthRoutingModule,
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

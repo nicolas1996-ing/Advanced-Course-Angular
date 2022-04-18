@@ -6,6 +6,9 @@ import { ProgressComponent } from './progress/progress.component';
 import { PagesComponent } from './pages.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { ComponentsModule } from '../components/components.module';
+import { NgChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,14 @@ import { AppRoutingModule } from '../app-routing.module';
     Grafica1Component,
     PagesComponent,
   ],
-  imports: [CommonModule, SharedModule,AppRoutingModule],
-  // El AppRoutingModule permite hacer uso del router-outlet 
+  imports: [
+    CommonModule,
+    SharedModule,
+    AppRoutingModule,
+    FormsModule,
+    ComponentsModule,
+    NgChartsModule,
+  ],
+  // El AppRoutingModule permite hacer uso del router-outlet
 })
 export class PagesModule {}

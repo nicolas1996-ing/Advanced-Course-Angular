@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { ComponentsModule } from '../components/components.module';
 import { NgChartsModule } from 'ng2-charts';
 import { AccountsSettingsComponent } from './accounts-settings/accounts-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { AccountsSettingsComponent } from './accounts-settings/accounts-settings
     Grafica1Component,
     PagesComponent,
     AccountsSettingsComponent,
+    PromesasComponent,
+    RxjsComponent,
   ],
   exports: [
     ProgressComponent,

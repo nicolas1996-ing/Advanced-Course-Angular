@@ -22,7 +22,7 @@
             <li><a href="javascript:void()">Inbox</a></li>
             <!-- <li><a routerLink="/dashboard/account-settings">Account Setting</a></li> -->
             <li><a routerLink="account-settings">Account Setting</a></li>
-            <li><a routerLink="/login">Logout</a></li>
+            <li><a class="pointer" (click)="logout()">Logout</a></li>
           </ul> 
         </li>
         <li class="nav-devider"></li>
@@ -43,6 +43,7 @@
           <ul aria-expanded="false" class="collapse">
             <li *ngFor="let sub of item.submenu">
               <a [routerLink]="sub.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ sub.title }}</a>
+              <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" => route active white color -->
             </li>
           </ul>
         </li>

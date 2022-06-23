@@ -9,19 +9,19 @@ export class PromesasComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    const promesa = new Promise((resolve, reject) => {
-      // resolve('Hola mundo');
-      reject('nuevo error');
-    });
+    // const promesa = new Promise((resolve, reject) => {
+    //   // resolve('Hola mundo');
+    //   reject('nuevo error');
+    // });
 
-    promesa
-      .then((data) => {
-        console.log(data);
-        console.log('data recibida');
-      })
-      .catch((err) => console.log(err));
+    // promesa
+    //   .then((data) => {
+    //     console.log(data);
+    //     console.log('data recibida');
+    //   })
+    //   .catch((err) => console.log(err));
 
-    this.getUsuarios().then((data) => console.log(data));
+    // this.getUsuarios().then((data) => console.log(data));
   }
 
   getUsuarios() {

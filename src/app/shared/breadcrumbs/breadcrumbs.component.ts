@@ -28,7 +28,7 @@ export class BreadcrumbsComponent implements OnInit, OnDestroy {
       filter((event): event is ActivationEnd => event instanceof ActivationEnd),
       filter((event: ActivationEnd) => event.snapshot.firstChild === null),
       map((event: ActivationEnd) => {
-        console.log(event.snapshot.data); // {title: 'string'} - parametro configurado en el routing (title)
+        // console.log(event.snapshot.data); // {title: 'string'} - parametro configurado en el routing (title)
         return event.snapshot.data;
       }) // respuesta final que se retornará (argumento de rutas)
     );

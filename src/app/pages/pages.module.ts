@@ -28,7 +28,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     DashboardComponent,
     Grafica1Component,
     PagesComponent,
-    AccountsSettingsComponent
+    AccountsSettingsComponent,
   ],
   imports: [
     CommonModule,

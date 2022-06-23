@@ -12,7 +12,7 @@ const routes: Routes = [
   // path '/login' && '/register' => AuthRoutingModule
   {
     path: '',
-    redirectTo: '/dashboard', // localhost:4200/ => localhost:4200/dashboard
+    redirectTo: '/dashboard', // localhost:4200/ => localhost:4200/dashboard - path: dashboard
     pathMatch: 'full',
   },
   {

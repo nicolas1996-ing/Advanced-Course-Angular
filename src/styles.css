@@ -6,10 +6,16 @@
   animation-fill-mode: both;
 }
 
-#themecolors li{
+#themecolors li {
   cursor: pointer;
 }
 
-.cursor{
+.cursor {
   cursor: pointer;
+}
+
+.img-avatar {
+  width: 200px;
+  height: 250px;
+  margin-bottom: 10px;
 }

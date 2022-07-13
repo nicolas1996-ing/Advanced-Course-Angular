@@ -10,6 +10,7 @@ import { AccountsSettingsComponent } from './accounts-settings/accounts-settings
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { AuthGuard } from '../guards/auth.guard';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
           title: 'rxjs',
         },
       },
+      {
+        path: 'profile', 
+        component: ProfileComponent
+      }
     ],
   },
 ];

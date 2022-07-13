@@ -42,6 +42,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.userService.login(this.loginForm.value).subscribe({
       next: (resp) => {
+        // console.log(resp);
         if (this.loginForm.get('remember')?.value) {
           localStorage.setItem(
             'email-angular-avanz',

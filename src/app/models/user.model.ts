@@ -40,3 +40,9 @@ export interface UserdBD {
   img:    string;
   uid:    string;
 }
+
+export interface UpdateUser{
+  name: string; 
+  email: string; 
+  role?: string
+}

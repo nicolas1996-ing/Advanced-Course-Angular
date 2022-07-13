@@ -9,29 +9,26 @@
         <li class="user-profile">
           <a
             class="has-arrow waves-effect waves-dark"
-            href="#"
-            aria-expanded="false"
-            ><img src="./assets/images/users/profile.png" alt="user" /><span
-              class="hide-menu"
-              >Steave Jobs
-            </span></a
+            (click)="showMenuItems()"
           >
-          <ul aria-expanded="false" class="collapse">
-            <li><a href="javascript:void()">My Profile </a></li>
-            <li><a href="javascript:void()">My Balance</a></li>
-            <li><a href="javascript:void()">Inbox</a></li>
-            <!-- <li><a routerLink="/dashboard/account-settings">Account Setting</a></li> -->
+            <img [src]="imgUrl" alt="user" />
+            <span class="hide-menu">{{ user?.name || "name-test" }} </span>
+          </a>
+          <ul *ngIf="showMenu">
+            <li><a routerLinkActive="active" routerLink="/dashboard/profile" >My Profile </a></li>
+            <li><a >My Balance</a></li>
+            <li><a >Inbox</a></li>
+            <li>
+              <a routerLink="/dashboard/account-settings">Account Setting</a>
+            </li>
             <li><a routerLink="account-settings">Account Setting</a></li>
             <li><a class="pointer" (click)="logout()">Logout</a></li>
-          </ul> 
+          </ul>
         </li>
         <li class="nav-devider"></li>
         <li class="nav-small-cap">PERSONAL</li>
         <li *ngFor="let item of menuItems">
-          <a
-            class="has-arrow waves-effect waves-dark"
-            href="#"
-            aria-expanded="false"
+          <a class="has-arrow waves-effect waves-dark" (click)="showDashboardItems()"
             ><i class="mdi mdi-gauge"></i
             ><span class="hide-menu"
               >{{ item.title }}
@@ -40,9 +37,14 @@
               }}</span></span
             ></a
           >
-          <ul aria-expanded="false" class="collapse">
+          <ul *ngIf="showDashboard" >
             <li *ngFor="let sub of item.submenu">
-              <a [routerLink]="sub.url" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ sub.title }}</a>
+              <a
+                [routerLink]="sub.url"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                >{{ sub.title }}</a
+              >
               <!-- routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" => route active white color -->
             </li>
           </ul>
